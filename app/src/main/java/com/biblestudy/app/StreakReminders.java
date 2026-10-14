@@ -69,7 +69,7 @@ final class StreakReminders {
         }
     }
 
-    static void show(Context c, int id, String title, String text, int faceRes) {
+    static void show(Context c, int id, String title, String text, int mood) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
                 && ContextCompat.checkSelfPermission(c, Manifest.permission.POST_NOTIFICATIONS)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -90,31 +90,17 @@ final class StreakReminders {
                 .setAutoCancel(true)
                 .setColor(0xFF2FBF71)
                 .setContentIntent(pi);
-        Bitmap big = bitmap(c, faceRes);
+        Bitmap big = JesusPhotos.load(c, mood, 256);
         if (big != null) b.setLargeIcon(big);
         NotificationManager nm = (NotificationManager) c.getSystemService(Context.NOTIFICATION_SERVICE);
         if (nm != null) nm.notify(id, b.build());
-    }
-
-    private static Bitmap bitmap(Context c, int res) {
-        try {
-            Drawable d = ContextCompat.getDrawable(c, res);
-            if (d == null) return null;
-            Bitmap bmp = Bitmap.createBitmap(192, 192, Bitmap.Config.ARGB_8888);
-            Canvas cv = new Canvas(bmp);
-            d.setBounds(0, 0, 192, 192);
-            d.draw(cv);
-            return bmp;
-        } catch (Exception e) {
-            return null;
-        }
     }
 
     static void showMorning(Context c, int id) {
         StreakStore.Verse v = StreakStore.todaysVerse(c);
         String title = "\uD83D\uDCD6 Verse of the day" + (v.ref.isEmpty() ? "" : " \u00B7 " + v.ref);
         String text = v.text.isEmpty() ? "Open the app and read today's verse." : v.text;
-        show(c, id, title, text, StreakWidgetProvider.FACES[0]);
+        show(c, id, title, text, StreakStore.MOOD_HAPPY);
     }
 
     static void showEvening(Context c, int id) {
@@ -124,6 +110,6 @@ final class StreakReminders {
                 st.mood == StreakStore.MOOD_SAD ? "\uD83D\uDE41 " :
                 st.mood == StreakStore.MOOD_CRYING ? "\uD83D\uDE22 " : "\uD83D\uDE42 ";
         String text = st.sub + (v.text.isEmpty() ? "" : "\n\n\u201C" + v.text + "\u201D " + v.ref);
-        show(c, id, face + st.title, text, StreakWidgetProvider.FACES[st.mood]);
+        show(c, id, face + st.title, text, st.mood);
     }
 }

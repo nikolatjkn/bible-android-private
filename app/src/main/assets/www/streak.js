@@ -6,7 +6,20 @@
   const A = window.AndroidStreak;
   if (!A) return; // web / iPhone version: nothing to do
 
-  const SVG = {"happy": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 120\"><path d=\"M30,36 L18,8 Q40,12 50,30Z\" fill=\"#1E9E5A\"/><path d=\"M90,36 L102,8 Q80,12 70,30Z\" fill=\"#1E9E5A\"/><path d=\"M20,68 a40,44 0 1,0 80,0 a40,44 0 1,0 -80,0z\" fill=\"#2FBF71\"/><path d=\"M20,70 Q4,84 14,104 Q30,102 34,82Z\" fill=\"#1E9E5A\"/><path d=\"M100,70 Q116,84 106,104 Q90,102 86,82Z\" fill=\"#1E9E5A\"/><path d=\"M37,92 a23,20 0 1,0 46,0 a23,20 0 1,0 -46,0z\" fill=\"#E4FCEA\"/><path d=\"M47,88 q4,5 8,0 M57,88 q4,5 8,0 M52,98 q4,5 8,0 M62,98 q4,5 8,0\" fill=\"none\" stroke=\"#8FDCA8\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M40,113 a8,4.5 0 1,0 16,0 a8,4.5 0 1,0 -16,0z\" fill=\"#FF9F1C\"/><path d=\"M64,113 a8,4.5 0 1,0 16,0 a8,4.5 0 1,0 -16,0z\" fill=\"#FF9F1C\"/><path d=\"M26,54 a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0z\" fill=\"#C9F7D6\"/><path d=\"M28.5,54 a12.5,12.5 0 1,0 25.0,0 a12.5,12.5 0 1,0 -25.0,0z\" fill=\"#FFC857\"/><path d=\"M30.5,54 a10.5,10.5 0 1,0 21.0,0 a10.5,10.5 0 1,0 -21.0,0z\" fill=\"#FFFFFF\"/><path d=\"M36,53 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0z\" fill=\"#12202B\"/><path d=\"M42,50.8 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0z\" fill=\"#FFFFFF\"/><path d=\"M64,54 a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0z\" fill=\"#C9F7D6\"/><path d=\"M66.5,54 a12.5,12.5 0 1,0 25.0,0 a12.5,12.5 0 1,0 -25.0,0z\" fill=\"#FFC857\"/><path d=\"M68.5,54 a10.5,10.5 0 1,0 21.0,0 a10.5,10.5 0 1,0 -21.0,0z\" fill=\"#FFFFFF\"/><path d=\"M72,53 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0z\" fill=\"#12202B\"/><path d=\"M78,50.8 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0z\" fill=\"#FFFFFF\"/><path d=\"M21,74 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0z\" fill=\"#FFA9BD\"/><path d=\"M89,74 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0z\" fill=\"#FFA9BD\"/><path d=\"M60,62 L53,71 L60,80 L67,71Z\" fill=\"#FF9F1C\" stroke=\"#E58200\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M100,12 l2.5,6 l6,2.5 l-6,2.5 l-2.5,6 l-2.5,-6 l-6,-2.5 l6,-2.5z\" fill=\"#FFD23F\"/></svg>", "worried": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 120\"><path d=\"M30,36 L18,8 Q40,12 50,30Z\" fill=\"#1E9E5A\"/><path d=\"M90,36 L102,8 Q80,12 70,30Z\" fill=\"#1E9E5A\"/><path d=\"M20,68 a40,44 0 1,0 80,0 a40,44 0 1,0 -80,0z\" fill=\"#2FBF71\"/><path d=\"M20,70 Q4,84 14,104 Q30,102 34,82Z\" fill=\"#1E9E5A\"/><path d=\"M100,70 Q116,84 106,104 Q90,102 86,82Z\" fill=\"#1E9E5A\"/><path d=\"M37,92 a23,20 0 1,0 46,0 a23,20 0 1,0 -46,0z\" fill=\"#E4FCEA\"/><path d=\"M47,88 q4,5 8,0 M57,88 q4,5 8,0 M52,98 q4,5 8,0 M62,98 q4,5 8,0\" fill=\"none\" stroke=\"#8FDCA8\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M40,113 a8,4.5 0 1,0 16,0 a8,4.5 0 1,0 -16,0z\" fill=\"#FF9F1C\"/><path d=\"M64,113 a8,4.5 0 1,0 16,0 a8,4.5 0 1,0 -16,0z\" fill=\"#FF9F1C\"/><path d=\"M26,54 a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0z\" fill=\"#C9F7D6\"/><path d=\"M28.5,54 a12.5,12.5 0 1,0 25.0,0 a12.5,12.5 0 1,0 -25.0,0z\" fill=\"#FFC857\"/><path d=\"M30.5,54 a10.5,10.5 0 1,0 21.0,0 a10.5,10.5 0 1,0 -21.0,0z\" fill=\"#FFFFFF\"/><path d=\"M38,51 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0z\" fill=\"#12202B\"/><path d=\"M44,48.8 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0z\" fill=\"#FFFFFF\"/><path d=\"M64,54 a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0z\" fill=\"#C9F7D6\"/><path d=\"M66.5,54 a12.5,12.5 0 1,0 25.0,0 a12.5,12.5 0 1,0 -25.0,0z\" fill=\"#FFC857\"/><path d=\"M68.5,54 a10.5,10.5 0 1,0 21.0,0 a10.5,10.5 0 1,0 -21.0,0z\" fill=\"#FFFFFF\"/><path d=\"M70,51 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0z\" fill=\"#12202B\"/><path d=\"M76,48.8 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0z\" fill=\"#FFFFFF\"/><path d=\"M26,36 L52,40\" fill=\"none\" stroke=\"#12202B\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M94,36 L68,40\" fill=\"none\" stroke=\"#12202B\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M60,62 L53,71 L60,80 L67,71Z\" fill=\"#FF9F1C\" stroke=\"#E58200\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M102,30 q8,10 0,17 q-8,-7 0,-17z\" fill=\"#5BC8FF\" stroke=\"#2E9BE0\" stroke-width=\"1.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>", "sad": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 120\"><path d=\"M30,38 L10,26 Q32,20 50,32Z\" fill=\"#1E9E5A\"/><path d=\"M90,38 L110,26 Q88,20 70,32Z\" fill=\"#1E9E5A\"/><path d=\"M20,68 a40,44 0 1,0 80,0 a40,44 0 1,0 -80,0z\" fill=\"#2FBF71\"/><path d=\"M20,70 Q4,84 14,104 Q30,102 34,82Z\" fill=\"#1E9E5A\"/><path d=\"M100,70 Q116,84 106,104 Q90,102 86,82Z\" fill=\"#1E9E5A\"/><path d=\"M37,92 a23,20 0 1,0 46,0 a23,20 0 1,0 -46,0z\" fill=\"#E4FCEA\"/><path d=\"M47,88 q4,5 8,0 M57,88 q4,5 8,0 M52,98 q4,5 8,0 M62,98 q4,5 8,0\" fill=\"none\" stroke=\"#8FDCA8\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M40,113 a8,4.5 0 1,0 16,0 a8,4.5 0 1,0 -16,0z\" fill=\"#FF9F1C\"/><path d=\"M64,113 a8,4.5 0 1,0 16,0 a8,4.5 0 1,0 -16,0z\" fill=\"#FF9F1C\"/><path d=\"M26,56 a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0z\" fill=\"#C9F7D6\"/><path d=\"M28.5,56 a12.5,12.5 0 1,0 25.0,0 a12.5,12.5 0 1,0 -25.0,0z\" fill=\"#FFC857\"/><path d=\"M30.5,56 a10.5,10.5 0 1,0 21.0,0 a10.5,10.5 0 1,0 -21.0,0z\" fill=\"#FFFFFF\"/><path d=\"M35,60 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0z\" fill=\"#12202B\"/><path d=\"M64,56 a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0z\" fill=\"#C9F7D6\"/><path d=\"M66.5,56 a12.5,12.5 0 1,0 25.0,0 a12.5,12.5 0 1,0 -25.0,0z\" fill=\"#FFC857\"/><path d=\"M68.5,56 a10.5,10.5 0 1,0 21.0,0 a10.5,10.5 0 1,0 -21.0,0z\" fill=\"#FFFFFF\"/><path d=\"M73,60 a6,6 0 1,0 12,0 a6,6 0 1,0 -12,0z\" fill=\"#12202B\"/><path d=\"M24,46 L54,38\" fill=\"none\" stroke=\"#12202B\" stroke-width=\"3.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M96,46 L66,38\" fill=\"none\" stroke=\"#12202B\" stroke-width=\"3.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M60,64 L54,72 L60,79 L66,72Z\" fill=\"#FF9F1C\" stroke=\"#E58200\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M52,86 Q60,80 68,86\" fill=\"none\" stroke=\"#12202B\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>", "crying": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 120\"><path d=\"M30,38 L10,26 Q32,20 50,32Z\" fill=\"#559F77\"/><path d=\"M90,38 L110,26 Q88,20 70,32Z\" fill=\"#559F77\"/><path d=\"M20,68 a40,44 0 1,0 80,0 a40,44 0 1,0 -80,0z\" fill=\"#6DBE91\"/><path d=\"M20,70 Q4,84 14,104 Q30,102 34,82Z\" fill=\"#559F77\"/><path d=\"M100,70 Q116,84 106,104 Q90,102 86,82Z\" fill=\"#559F77\"/><path d=\"M37,92 a23,20 0 1,0 46,0 a23,20 0 1,0 -46,0z\" fill=\"#E4FCEA\"/><path d=\"M47,88 q4,5 8,0 M57,88 q4,5 8,0 M52,98 q4,5 8,0 M62,98 q4,5 8,0\" fill=\"none\" stroke=\"#8FDCA8\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M40,113 a8,4.5 0 1,0 16,0 a8,4.5 0 1,0 -16,0z\" fill=\"#FF9F1C\"/><path d=\"M64,113 a8,4.5 0 1,0 16,0 a8,4.5 0 1,0 -16,0z\" fill=\"#FF9F1C\"/><path d=\"M28,54 Q41,66 54,54\" fill=\"none\" stroke=\"#12202B\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M66,54 Q79,66 92,54\" fill=\"none\" stroke=\"#12202B\" stroke-width=\"4.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M24,44 L54,38\" fill=\"none\" stroke=\"#12202B\" stroke-width=\"3.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M96,44 L66,38\" fill=\"none\" stroke=\"#12202B\" stroke-width=\"3.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M32,62 q-5,16 0,34\" fill=\"none\" stroke=\"#5BC8FF\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M88,62 q5,16 0,34\" fill=\"none\" stroke=\"#5BC8FF\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M32,98 q-6,7 0,11 q6,-4 0,-11z\" fill=\"#5BC8FF\"/><path d=\"M88,98 q-6,7 0,11 q6,-4 0,-11z\" fill=\"#5BC8FF\"/><path d=\"M60,64 L54,72 L60,79 L66,72Z\" fill=\"#FF9F1C\" stroke=\"#E58200\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M50,88 Q60,78 70,88\" fill=\"none\" stroke=\"#12202B\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>", "flame": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12,2 C13,6 19,9 19,15 C19,19 16,22 12,22 C8,22 5,19 5,15 C5,12 7,10 8,8 C9,10 10,10.5 10.5,10 C10,7 10.5,4.5 12,2Z\" fill=\"#FF8A00\"/><path d=\"M12,22 C9.5,22 8,20.5 8,18.5 C8,16.5 10,15 11,13 C12,15 14,16 16,18.5 C16,20.5 14.5,22 12,22Z\" fill=\"#FFD23F\"/></svg>", "flame_off": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12,2 C13,6 19,9 19,15 C19,19 16,22 12,22 C8,22 5,19 5,15 C5,12 7,10 8,8 C9,10 10,10.5 10.5,10 C10,7 10.5,4.5 12,2Z\" fill=\"#6D7590\"/><path d=\"M12,22 C9.5,22 8,20.5 8,18.5 C8,16.5 10,15 11,13 C12,15 14,16 16,18.5 C16,20.5 14.5,22 12,22Z\" fill=\"#9AA2BA\"/></svg>"};
+  const SVG = {"flame": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12,2 C13,6 19,9 19,15 C19,19 16,22 12,22 C8,22 5,19 5,15 C5,12 7,10 8,8 C9,10 10,10.5 10.5,10 C10,7 10.5,4.5 12,2Z\" fill=\"#FF8A00\"/><path d=\"M12,22 C9.5,22 8,20.5 8,18.5 C8,16.5 10,15 11,13 C12,15 14,16 16,18.5 C16,20.5 14.5,22 12,22Z\" fill=\"#FFD23F\"/></svg>", "flame_off": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M12,2 C13,6 19,9 19,15 C19,19 16,22 12,22 C8,22 5,19 5,15 C5,12 7,10 8,8 C9,10 10,10.5 10.5,10 C10,7 10.5,4.5 12,2Z\" fill=\"#6D7590\"/><path d=\"M12,22 C9.5,22 8,20.5 8,18.5 C8,16.5 10,15 11,13 C12,15 14,16 16,18.5 C16,20.5 14.5,22 12,22Z\" fill=\"#9AA2BA\"/></svg>"};
+  // ---- Jesus photos replace the old owl mascot. Mood: 0 happy, 1 worried, 2 sad, 3 crying ----
+  const PH = {
+    boy:  [[1, 2, 4], [3, 13], [12, 9, 10], [16, 11, 18]],
+    girl: [[7], [5], [17, 15, 10], [19, 8, 6]]
+  };
+  const GKEY = 'bs_gender';
+  const getGender = () => { try { const g = localStorage.getItem(GKEY); return g === 'boy' || g === 'girl' ? g : ''; } catch (e) { return ''; } };
+  const setGender = (g) => { try { localStorage.setItem(GKEY, g); } catch (e) {} try { A.setGender(g); } catch (e) {} };
+  try { if (getGender()) A.setGender(getGender()); } catch (e) {}
+  const photoUrl = (g, mood, day) => {
+    const list = PH[g || 'boy'][Math.max(0, Math.min(3, mood))];
+    return 'jesus/j' + String(list[Math.abs(day) % list.length]).padStart(2, '0') + '.jpg';
+  };
   const DAY = 864e5;
   const localDay = (ms) => Math.floor((ms - new Date(ms).getTimezoneOffset() * 60000) / DAY);
   const CFG_KEY = 'bs_streak_cfg';
@@ -81,9 +94,18 @@
   .bsk-num svg{width:50px;height:50px}.bsk-num.on svg{animation:bskflick 1.6s ease-in-out infinite;filter:drop-shadow(0 0 10px rgba(255,138,0,.7))}
   .bsk-num b{font-size:64px;line-height:1;font-weight:900;letter-spacing:-2px;background:linear-gradient(180deg,#fff,var(--acc));-webkit-background-clip:text;background-clip:text;color:transparent}
   .bsk-lbl{font-weight:800;font-size:15px;opacity:.9;margin-top:2px}.bsk-sub{opacity:.7;font-size:13px;margin-top:4px;max-width:190px}
-  .bsk-owl{position:relative;width:128px;height:128px;flex:none}
-  .bsk-owl:before{content:"";position:absolute;inset:-6px;border-radius:50%;background:radial-gradient(circle,rgba(74,222,128,.45),transparent 68%);background:radial-gradient(circle,color-mix(in srgb,var(--acc) 55%,transparent),transparent 68%)}
-  .bsk-owl svg{position:relative;width:100%;height:100%;animation:bskbob 3.2s ease-in-out infinite;filter:drop-shadow(0 8px 10px rgba(0,0,0,.4))}
+  .bsk-owl{position:relative;width:124px;height:156px;flex:none}
+  .bsk-owl:before{content:"";position:absolute;inset:-8px;border-radius:34px;background:radial-gradient(circle,rgba(74,222,128,.45),transparent 68%);background:radial-gradient(circle,color-mix(in srgb,var(--acc) 55%,transparent),transparent 68%)}
+  .bsk-owl img{position:relative;width:100%;height:100%;object-fit:cover;object-position:50% 40%;border-radius:26px;border:2px solid rgba(255,255,255,.35);background:#fff;box-shadow:0 8px 18px rgba(0,0,0,.45);animation:bskbob 3.2s ease-in-out infinite}
+  .bsk-sw{display:flex;justify-content:center;gap:8px;margin-top:12px}.bsk-sw button{padding:7px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;font:700 13px system-ui,sans-serif}.bsk-sw button.on{background:linear-gradient(90deg,#2bb7ff,#4f7cff);border-color:transparent}
+  #bsk-who{display:none;position:fixed;inset:0;z-index:100001;background:radial-gradient(120% 70% at 50% 0%,#3a4a8a,#0e1226 70%);color:#fff;font:16px system-ui,sans-serif;text-align:center;overflow:auto}
+  #bsk-who .in{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 22px}
+  #bsk-who h1{font-size:28px;margin:18px 0 6px;font-weight:900}#bsk-who p{opacity:.75;margin:0 0 22px;max-width:300px}
+  #bsk-who .pic{width:200px;height:250px;border-radius:30px;object-fit:cover;border:3px solid rgba(255,255,255,.4);background:#fff;box-shadow:0 14px 34px rgba(0,0,0,.55)}
+  #bsk-who .row{display:flex;gap:14px;width:100%;max-width:340px}
+  #bsk-who .row button{flex:1;padding:20px 8px;border-radius:22px;border:1px solid rgba(255,255,255,.25);color:#fff;font:900 20px system-ui,sans-serif;background:rgba(255,255,255,.1)}
+  #bsk-who .row button:active{transform:scale(.96)}
+  #bsk-who .row button.b{background:linear-gradient(180deg,#3aa0ff,#2563eb)}#bsk-who .row button.g{background:linear-gradient(180deg,#ff7eb6,#e0457b)}
   .bsk-card{margin-top:16px;padding:14px;border-radius:20px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12)}
   .bsk-week{display:flex;justify-content:space-between}
   .bsk-d{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;font-weight:800;opacity:.9}
@@ -134,7 +156,6 @@
 
   function render() {
     const c = cfgNow(), moodIdx = Math.max(0, Math.min(3, c.mood || 0));
-    const moodName = ['happy', 'worried', 'sad', 'crying'][moodIdx];
     const days = c.days || [], today = c.today || localDay(Date.now());
     const idx = (new Date().getDay() + 6) % 7;
     let wk = '', weekDone = 0;
@@ -151,8 +172,9 @@
       '<button class="x" id="bsk-x">\u2715</button>' +
       '<div class="bsk-hero"><div><div class="bsk-num ' + (c.streak ? 'on' : '') + '">' + (c.streak ? SVG.flame : SVG.flame_off) + '<b>' + (c.num != null ? c.num : 0) + '</b></div>' +
       '<div class="bsk-lbl">' + (c.label || 'day streak') + '</div><div class="bsk-sub">' + (c.sub || '') + '</div></div>' +
-      '<div class="bsk-owl">' + SVG[moodName] + '</div></div>' +
+      '<div class="bsk-owl"><img alt="" src="' + photoUrl(getGender(), moodIdx, today) + '"></div></div>' +
       '<div class="bsk-card"><div class="bsk-week">' + wk + '</div></div>' +
+      '<div class="bsk-sw"><button data-g="boy" class="' + (getGender() !== 'girl' ? 'on' : '') + '">Boy</button><button data-g="girl" class="' + (getGender() === 'girl' ? 'on' : '') + '">Girl</button></div>' +
       '<div class="bsk-stats"><div class="bsk-stat"><b>' + (c.best || 0) + '</b><span>Best</span></div>' +
       '<div class="bsk-stat"><b>' + (c.total || 0) + '</b><span>Days read</span></div>' +
       '<div class="bsk-stat"><b>' + weekDone + '/7</b><span>This week</span></div></div>' +
@@ -173,6 +195,7 @@
     };
     ['#bsk-m', '#bsk-mt', '#bsk-e', '#bsk-et'].forEach((s) => { q(s).onchange = push; });
     q('#bsk-v').onchange = () => { cfg.ver = q('#bsk-v').value; saveCfg(); syncVerses(); };
+    box.querySelectorAll('.bsk-sw button').forEach((b) => { b.onclick = () => { setGender(b.dataset.g); render(); }; });
     q('#bsk-x').onclick = () => { ov.style.display = 'none'; };
     q('#bsk-t').onclick = () => { try { A.testNotification(); q('#bsk-msg').textContent = 'Sent. Check your notifications (allow notifications if nothing shows).'; } catch (e) {} };
     q('#bsk-w').onclick = () => {
@@ -181,4 +204,15 @@
     };
   }
   btn.onclick = () => { render(); ov.style.display = 'block'; };
+
+  // ---- first launch after install: ask boy or girl ----
+  function askWho() {
+    if (getGender()) return;
+    const w = document.createElement('div'); w.id = 'bsk-who';
+    w.innerHTML = '<div class="in"><img class="pic" alt="" src="jesus/j01.jpg"><h1>Welcome</h1><p>Are you a boy or a girl? Jesus will walk with you through your reading streak.</p>' +
+      '<div class="row"><button class="b" data-g="boy">Boy</button><button class="g" data-g="girl">Girl</button></div></div>';
+    document.body.appendChild(w); w.style.display = 'block';
+    w.querySelectorAll('button').forEach((b) => { b.onclick = () => { setGender(b.dataset.g); w.remove(); }; });
+  }
+  askWho();
 })();

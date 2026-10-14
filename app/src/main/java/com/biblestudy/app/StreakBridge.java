@@ -33,6 +33,18 @@ public class StreakBridge {
         StreakWidgetProvider.refreshAll(ctx);
     }
 
+    /** "boy" or "girl" - picks which Jesus photos the widget and notifications use. */
+    @JavascriptInterface
+    public void setGender(String g) {
+        JesusPhotos.setGender(ctx, g);
+        StreakWidgetProvider.refreshAll(ctx);
+    }
+
+    @JavascriptInterface
+    public String getGender() {
+        return JesusPhotos.gender(ctx);
+    }
+
     @JavascriptInterface
     public void configure(String json) {
         try {

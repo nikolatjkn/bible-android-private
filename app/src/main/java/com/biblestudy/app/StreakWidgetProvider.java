@@ -11,12 +11,9 @@ import android.widget.RemoteViews;
 import java.util.Calendar;
 import java.util.Set;
 
-/** Home-screen widget: streak number, week row and an owl whose mood follows your reading. */
+/** Home-screen widget: streak number, week row and a Jesus photo whose mood follows your reading. */
 public class StreakWidgetProvider extends AppWidgetProvider {
 
-    static final int[] FACES = {
-            R.drawable.streak_happy, R.drawable.streak_worried,
-            R.drawable.streak_sad, R.drawable.streak_crying};
     private static final int[] BGS = {
             R.drawable.streak_bg_happy, R.drawable.streak_bg_worried,
             R.drawable.streak_bg_sad, R.drawable.streak_bg_crying};
@@ -38,7 +35,8 @@ public class StreakWidgetProvider extends AppWidgetProvider {
         RemoteViews rv = new RemoteViews(ctx.getPackageName(), R.layout.widget_streak);
         rv.setInt(R.id.widget_root, "setBackgroundResource", BGS[st.mood]);
         rv.setInt(R.id.widget_char_wrap, "setBackgroundResource", GLOWS[st.mood]);
-        rv.setImageViewResource(R.id.widget_char, FACES[st.mood]);
+        android.graphics.Bitmap face = JesusPhotos.load(ctx, st.mood, 300);
+        if (face != null) rv.setImageViewBitmap(R.id.widget_char, face);
         rv.setImageViewResource(R.id.widget_flame, st.flameOn ? R.drawable.flame_on : R.drawable.flame_off);
         rv.setTextViewText(R.id.widget_num, String.valueOf(st.num));
         rv.setTextViewText(R.id.widget_label, st.label);
