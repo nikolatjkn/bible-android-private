@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file was empty (0 bytes) in the project, which is what caused the
+  "Content is not allowed in prolog" build error; an empty XML resource
+  has no <?xml ...?> declaration for the parser to find at all.
+
+  MainActivity.onCreate() calls setContentView(R.layout.activity_main) and
+  then looks up three views by id: webview, loading_overlay, loading_text.
+  This layout supplies exactly those three, with the overlay stacked on
+  top of the WebView via FrameLayout so it can be hidden once the page
+  finishes loading (loadingOverlay.setVisibility(View.GONE)).
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/loading_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/loading_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Loading..."
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</FrameLayout>

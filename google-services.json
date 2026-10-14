@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "234740245152",
+    "project_id": "kjv-tam-mya-bibles",
+    "storage_bucket": "kjv-tam-mya-bibles.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234740245152:android:0c5734835d9cbfcaea9fc5",
+        "android_client_info": {
+          "package_name": "com.yourname.kjvtammya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "234740245152-99ihmsdjf40sk2a0bluh1vbpudou686b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yourname.kjvtammya",
+            "certificate_hash": "f317650f4b5c270c3f47df525884188d8497569f"
+          }
+        },
+        {
+          "client_id": "234740245152-6pss85b4onr3la1f7r9iqb9sb6d18nhu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSbb0uStCtpi_KZbyqgHfZZFcIegyW9Gs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "234740245152-6pss85b4onr3la1f7r9iqb9sb6d18nhu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,78 @@
+plugins {
+    id 'com.android.application'
+    id("com.google.gms.google-services")
+
+}
+
+android {
+    namespace 'com.biblestudy.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.yourname.kjvtammya"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // The bundled Bible data (interlinear jsons, tamil/myanmar text, etc.)
+    // is large — make sure assets are stored, not needlessly reprocessed.
+    aaptOptions {
+        noCompress "json", "pdf"
+    }
+
+    // Data set is ~166MB, comfortably under the 2GB single-dex/asset limits,
+    // but large enough that build/first-run can take a while.
+}
+
+dependencies {
+    implementation (platform("com.google.firebase:firebase-bom:34.19.0"))
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.webkit:webkit:1.10.0'
+    // Page list for the bundled Tamil PDF books (PdfViewerActivity).
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+
+    // Native Google Sign-In (GoogleSignInBridge.java). Google blocks its
+    // OAuth web flow inside embedded WebViews, so the page's
+    // signInWithPopup() path can never work in the installed app; Credential
+    // Manager gets a Google ID token natively instead, which the page then
+    // exchanges via firebaseAuth.signInWithCredential().
+    implementation 'androidx.credentials:credentials:1.3.0'
+    implementation 'androidx.credentials:credentials-play-services-auth:1.3.0'
+    implementation 'com.google.android.libraries.identity.googleid:googleid:1.1.1'
+
+    // Background/lock-screen/notification/Bluetooth audio playback,
+    // gapless/fade chapter transitions, and mono downmix.
+    implementation 'androidx.media3:media3-exoplayer:1.4.1'
+    implementation 'androidx.media3:media3-session:1.4.1'
+    implementation 'androidx.media3:media3-common:1.4.1'
+
+    // Lets the offline-audio "Import Whole Folder" feature walk a
+    // user-picked folder tree (Storage Access Framework) recursively.
+    implementation 'androidx.documentfile:documentfile:1.0.1'
+
+    // NOTE on PlaybackService.java's DefaultAudioSink.Builder usage (the
+    // mono-downmix wiring): Media3's AudioSink-customization API has
+    // changed its exact method/constructor shapes across releases. If
+    // Gradle reports an error there specifically ("cannot find symbol" on
+    // DefaultAudioSink.Builder / DefaultAudioProcessorChain / buildAudioSink),
+    // it means the resolved 1.4.1 version's signature differs slightly from
+    // what's written — paste the exact error back and it's a small,
+    // localized fix, not a redesign. Every other native file (gapless
+    // queueing, bass/treble/volume boost, lock-screen/notification/
+    // Bluetooth controls, offline downloads) doesn't depend on this API and
+    // is unaffected either way.
+}
+
